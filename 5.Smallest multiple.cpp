@@ -1,40 +1,24 @@
-/*
-This does not require programming at all. Compute the prime factorization of each number from 1 to 20, and multiply the greatest power of each prime together:
-
-20 = 2^2 * 5
-19 = 19
-18 = 2 * 3^2
-17 = 17
-16 = 2^4
-15 = 3 * 5
-14 = 2 * 7
-13 = 13
-11 = 11
-
-All others are included in the previous numbers.
-
-ANSWER: 2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19 = 232 792 560
-*/
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-  clrscr();
-  long i,n;
-  int j;
-  cout<<"Wait....";
-  for(i=2;i<1000000000;i++)
-  {
-    for(j=20;j>0;j--)
-    {
-      if(i%j!=0)
-	break;
-      else
-	n=i;
+#include <bits/stdc++.h>
+using namespace std;
+#define nl "\n"
+#define ll long long
+#define pb push_back
+#define pi acos(-1)
+#define first f
+#define second s
+#define lightSpeed() ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+const unsigned int M = 1000000007;
+ll lcm(ll a,ll b){
+    ll l = a*b;
+    l/=__gcd(a,b);
+    return l;
+}
+int main(int argc, char const *argv[]){
+    lightSpeed();
+    ll n = 20;
+    ll ans=1;
+    for(int i=1;i<=n;i++){
+        ans=lcm(ans,i);
     }
-    if(j==0)
-     break;
-  }
-  cout<<"\n\nThe no is "<<n;
-  getch();
+    cout<<ans;
 }
