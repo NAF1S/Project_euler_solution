@@ -35,8 +35,17 @@ int main(){
     	ans+=path[x][y];
     }
     //cout<<ans+path[0][0];
-    for(int i=14;i>=0;i--){
-    	int x = path[i][i-1];
-    	for(int j=)
+    int x=3;
+    int y=0;
+    for(int i=3;i>=1;i--){
+    	if(path[x-1][y]>path[x-1][y-1]){
+    		x-=1;
+    		y++;
+    	}
+    	else{
+    		x-=1;
+    		y++;
+    	}
+    	cout<<x<<" "<<y<<" ";
     }
 }
